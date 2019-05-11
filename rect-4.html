@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>矩形</title>
+    <style>
+        canvas{
+            border:1px solid red
+        }
+    </style>
+</head>
+<body onload="draw()">
+<canvas id="canvas" ></canvas>
+</body>
+<script>
+    function draw(){
+        var canvas=document.getElementById('canvas')
+        if(canvas.getContext){
+            var ctx=canvas.getContext('2d')
+
+             ctx.fillRect(10,10,50,50)
+             ctx.strokeRect(10,65,50,50)
+             ctx.clearRect(20,20,20,20)
+
+        }
+    }
+</script>
+</html>

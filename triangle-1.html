@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三角形</title>
+    <style>
+        canvas{
+            border:1px solid red
+        }
+    </style>
+</head>
+<body onload="draw()">
+<canvas id="canvas" height="300" width="300"></canvas>
+
+</body>
+<script>
+    function draw(){
+        var canvas=document.getElementById('canvas')
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d')
+            //朝左的三角形
+            ctx.beginPath()
+            ctx.moveTo(50,50)
+            ctx.lineTo(100,25)
+            ctx.lineTo(100,75)
+            ctx.fill()
+            // 朝下的三角形
+            ctx.beginPath()
+            ctx.moveTo(150,150)
+            ctx.lineTo(250,150)
+            ctx.lineTo(200,250)
+            ctx.fill()
+            // 描边的三角形
+            ctx.beginPath()
+            ctx.moveTo(125,125)
+            ctx.lineTo(125,45)
+            ctx.lineTo(45,125)
+            ctx.closePath() //因为stroke函数不能关闭路径，所以要手动关闭路径
+            ctx.stroke()
+
+        }
+    }
+
+</script>
+</html>
